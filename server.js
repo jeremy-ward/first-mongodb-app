@@ -32,13 +32,12 @@ db.once("open", function(){
 	});
 	var Clients = mongoose.model('Clients',clientsSchema);
 
-//===set view engin to hogan=====================
-app.engine('html', require('hogan-express'));
-app.set('view engine', 'html');
+//===set view engin to ejs=====================
+app.set('view engine', 'ejs');
 
 //===set up the app routes=======================
 app.get("/",function(req,res){
-	res.render("index.html");
+	res.render("index.ejs");
 });
 
 //===api methods=================================
